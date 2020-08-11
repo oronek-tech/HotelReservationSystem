@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="HotelReservationSystem.Views.AddReservationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelReservationSystem.Views"
+             mc:Ignorable="d" 
+             Background="DimGray"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            
+            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+            
+        </Grid.RowDefinitions>
+
+
+        <!-- Title -->
+        <TextBlock Text="Tworzenie rezerwacji" Grid.Row="0" 
+                   Grid.Column="0" Grid.ColumnSpan="11"
+                   TextAlignment="Center" FontWeight="Bold" FontSize="20" Margin="10"/> 
+     
+        
+        
+        
+
+
+
+        <!-- Add Person Form Titles -->
+        <TextBlock Text="Imię:" Grid.Row="2" Grid.Column="3" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="Nazwisko:" Grid.Row="2" Grid.Column="5" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="E-Mail:" Grid.Row="2" Grid.Column="7" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="Numer telefonu:" Grid.Row="2" Grid.Column="9" 
+                   TextAlignment="Center" FontSize="16" />
+
+        <!-- Add Person Boxes -->
+        <TextBox Grid.Row="3" Grid.Column="3" MinWidth="100" 
+                 x:Name="SelectedFirstName" />
+        <TextBox Grid.Row="3" Grid.Column="5" MinWidth="100" 
+                 x:Name="SelectedLastName" />
+        <TextBox Grid.Row="3" Grid.Column="7" MinWidth="100" 
+                 x:Name="SelectedMail" />
+        <TextBox Grid.Row="3" Grid.Column="9" MinWidth="100" 
+                 x:Name="SelectedPhoneNumber"/>
+        
+        <!-- Save Person Form -->
+        <Button x:Name="SavePerson" Grid.Row="5" Grid.Column="5">Dodaj gościa</Button>
+        
+        
+        
+        
+        <!-- Reservation Form Titles -->
+        <TextBlock Text="Pokój:" Grid.Row="7" Grid.Column="1" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="Osoba rezerwująca:" Grid.Row="7" Grid.Column="3" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="Data przyjazdu:" Grid.Row="7" Grid.Column="5" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="Data wyjazdu:" Grid.Row="7" Grid.Column="7" 
+                   TextAlignment="Center" FontSize="16" />
+        <TextBlock Text="Liczba gości:" Grid.Row="7" Grid.Column="9" 
+                   TextAlignment="Center" FontSize="16" />
+        
+        
+        <!-- Reservation Form Boxes -->
+
+        <ComboBox Grid.Row="8" Grid.Column="1" x:Name="RoomsList"
+                  SelectedItem="{Binding Path=SelectedRoom, Mode=OneWayToSource}"
+                  DisplayMemberPath="RoomInformation" Width="100" />
+        <ComboBox Grid.Row="8" Grid.Column="3" x:Name="PeopleList"
+                  SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}"
+                  DisplayMemberPath="FullName" Width="120"/>
+
+        <DatePicker Grid.Row="8" Grid.Column="5"
+                    SelectedDate="{Binding Path=SelectedDateIn}" />
+        <DatePicker Grid.Row="8" Grid.Column="7"
+                    SelectedDate="{Binding Path=SelectedDateOut}" />
+        <TextBox Grid.Row="8" Grid.Column="9" MinWidth="100" 
+                 x:Name="SelectedNumberOfGuest" />
+
+        <!-- Save Reservation Form -->
+        <Button x:Name="SaveReservation" Grid.Row="10" Grid.Column="5">Dokonaj rezerwacji</Button>
+
+
+       
+        
+
+
+    </Grid>
+</UserControl>
